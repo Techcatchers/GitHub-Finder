@@ -14,4 +14,4 @@ This project is built using HTML/CSS and Bootstrap 4. It makes use of Vanilla Ja
 
 ## Live Demo
 
-Here is the [Live Version]() of the Web App.
+Here is the [Live Version](https://techcatchers.github.io/GitHub-Finder/) of the Web App.

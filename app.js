@@ -7,7 +7,7 @@ const searchUser = document.querySelector('#search-user');
 searchUser.addEventListener('keyup', (e) => {
     clearTimeout(execute);
     const userText = e.target.value;
-    execute = setTimeout(extractInfo, 1500, userText);
+    execute = setTimeout(extractInfo, 1000, userText);
 })
 
 
