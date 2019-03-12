@@ -6,29 +6,41 @@ class UI {
     showProfile(user) {
         // console.log(user)
 
+        const userDp = user.avatar_url,
+            viewProfile = user.html_url,
+            pubRepos = user.public_repos,
+            pubGists = user.public_gists,
+            followers = user.followers,
+            following = user.following,
+            company = user.company || 'Not Provided',
+            website = user.blog || 'Not Provided',
+            websiteUrl = (website === 'Not Provided') ? '' : website,
+            location = user.location || 'Not Provided',
+            profileCreated = (new Date(user.created_at)).toDateString();
+            
         this.profile.innerHTML = `
         <div class="card card-body mb-3">
             <div class="row">
                 <div class="col-md-3">
-                <img class="img-fluid mb-2" src="${user.avatar_url}">
-                <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block mb-4">View Profile</a>
+                <img class="img-fluid mb-2" src="${userDp}">
+                <a href="${viewProfile}" target="_blank" class="btn btn-primary btn-block mb-4">View Profile</a>
                 </div>
                 <div class="col-md-9">
-                <span class="badge badge-primary">Public Repos: ${user.public_repos}</span>
-                <span class="badge badge-secondary">Public Gists: ${user.public_gists}</span>
-                <span class="badge badge-success">Followers: ${user.followers}</span>
-                <span class="badge badge-info">Following: ${user.following}</span>
+                <span class="badge badge-primary">Public Repos: ${pubRepos}</span>
+                <span class="badge badge-secondary">Public Gists: ${pubGists}</span>
+                <span class="badge badge-success">Followers: ${followers}</span>
+                <span class="badge badge-info">Following: ${following}</span>
                 <br><br>
                 <ul class="list-group">
-                <li class="list-group-item">Company: ${user.company}
-                <li class="list-group-item">Website/Blog: <a href="${user.blog}" target="_blank">${user.blog}</a>
-                <li class="list-group-item">Location: ${user.location}
-                <li class="list-group-item">Member since: ${user.created_at}
+                <li class="list-group-item">Company: ${company}
+                <li class="list-group-item">Website/Blog: <a href="${websiteUrl}" target="_blank">${website}</a>
+                <li class="list-group-item">Location: ${location}
+                <li class="list-group-item">Member since: ${profileCreated}
                 </ul>
                 </div>
             </div>
         </div>
-        <h3 class="page-heading mb-3">Latest Repos</h3>
+        <h3 class="page-heading mb-3 ml-3" style="color: rgb(57, 113, 209)">Latest Repositories</h3>
         <div id="repos"></div>
         `;
     }
@@ -58,6 +70,18 @@ class UI {
         });
 
         // console.log(output);
+        if (output === '') {
+            output = `
+            <div class="card card-body md-2">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        No Repositories found. :)
+                    </div>
+                </div>
+            </div>
+            `
+        }
+
         document.querySelector('#repos').innerHTML = output;
     }
 
