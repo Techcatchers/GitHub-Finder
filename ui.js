@@ -26,10 +26,10 @@ class UI {
                 <a href="${viewProfile}" target="_blank" class="btn btn-primary btn-block mb-4">View Profile</a>
                 </div>
                 <div class="col-md-9">
-                <span class="badge badge-primary">Public Repos: ${pubRepos}</span>
-                <span class="badge badge-secondary">Public Gists: ${pubGists}</span>
-                <span class="badge badge-success">Followers: ${followers}</span>
-                <span class="badge badge-info">Following: ${following}</span>
+                <span class="badge badge-primary mb-2">Public Repos: ${pubRepos}</span>
+                <span class="badge badge-secondary mb-2">Public Gists: ${pubGists}</span>
+                <span class="badge badge-success mb-2">Followers: ${followers}</span>
+                <span class="badge badge-info mb-2">Following: ${following}</span>
                 <br><br>
                 <ul class="list-group">
                 <li class="list-group-item">Company: ${company}
@@ -60,9 +60,9 @@ class UI {
                         <a href="${repo.html_url}" target="_blank">${repo.name}</a>
                     </div>
                     <div class="col-md-6">
-                        <span class="badge badge-primary">Stars: ${repo.stargazers_count}</span>
-                        <span class="badge badge-secondary">Watchers: ${repo.watchers_count}</span>
-                        <span class="badge badge-success">Forks: ${repo.forks_count}</span>
+                        <span class="badge badge-primary mb-2 mt-2">Stars: ${repo.stargazers_count}</span>
+                        <span class="badge badge-secondary mb-2 mt-2">Watchers: ${repo.watchers_count}</span>
+                        <span class="badge badge-success mb-2 mt-2">Forks: ${repo.forks_count}</span>
                     </div>
                 </div>
             </div>
