@@ -7,6 +7,8 @@ class UI {
         // console.log(user)
 
         const userDp = user.avatar_url,
+            name = user.name || 'No Name Provided',
+            username = user.login,
             viewProfile = user.html_url,
             pubRepos = user.public_repos,
             pubGists = user.public_gists,
@@ -21,8 +23,12 @@ class UI {
         this.profile.innerHTML = `
         <div class="card card-body mb-3">
             <div class="row">
-                <div class="col-md-3">
-                <img class="img-fluid mb-2" src="${userDp}">
+                <div class="col-md-3 text-center">
+                    <img class="img-fluid mb-2" src="${userDp}">
+                <div class="name">
+                    <strong>${name}</strong><br>
+                </div>
+                <div class="mb-2">${username}</div>
                 <a href="${viewProfile}" target="_blank" class="btn btn-primary btn-block mb-4">View Profile</a>
                 </div>
                 <div class="col-md-9">
@@ -46,6 +52,8 @@ class UI {
     }
 
     clearProfile() {
+        document.querySelector('footer').style.position = 'absolute';
+        document.querySelector('footer').style.top = '90vh';
         this.profile.innerHTML = '';
     }
 
@@ -82,6 +90,8 @@ class UI {
             `
         }
 
+        document.querySelector('footer').style.position = 'relative';
+        document.querySelector('footer').style.top = '10vh';
         document.querySelector('#repos').innerHTML = output;
     }
 
@@ -108,5 +118,13 @@ class UI {
         if (currentAlert) {
             currentAlert.remove();
         }
+    }
+
+    showLoading() {
+        document.querySelector('.loader').style.display = 'block';
+    }
+    
+    hideLoading() {
+        document.querySelector('.loader').style.display = 'none';
     }
 }

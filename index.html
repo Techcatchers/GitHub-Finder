@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://freepngimg.com/download/github/1-2-github-free-png-image.png" type="image/x-icon">
     <title>GitHub Finder</title>
 </head>
@@ -16,15 +17,16 @@
     </nav>
     <div class="container search-container">
         <div class="search card card-body">
-            <h1 style="color: rgb(57, 113, 209)">Search GitHub Users</h1>
+            <h1>Search GitHub Users</h1>
             <p class="lead">Enter a username to fetch a user profile and repos from GitHub.</p>
             <input type="text" id="search-user" class="form-control" placeholder="GitHub username..." autofocus>
         </div>
         <br>
+        <div class="loader"></div>
         <div id="profile"></div>
     </div>
 
-    <footer class="mt-5 p-3 text-center bg-light">
+    <footer class="p-3 text-center bg-light">
         GitHub Finder &copy; 2019
     </footer>
 

@@ -14,8 +14,10 @@ searchUser.addEventListener('keyup', (e) => {
 function extractInfo(userText) {
 
     if (userText !== '') {
+        ui.showLoading();
         github.getuser(userText)
         .then (data => {
+            ui.hideLoading();
             if ((data.profile.message) === 'Not Found') {
                 // show alert
                 // console.log(data);
@@ -25,6 +27,10 @@ function extractInfo(userText) {
                 ui.showProfile(data.profile);
                 ui.showRepos(data.repos);
             }
+        })
+        .catch (() => {
+            ui.hideLoading();
+            ui.showAlert('User not found', 'alert alert-danger');
         })
     } else {
         // clear profilw
