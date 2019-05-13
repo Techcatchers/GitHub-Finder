@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 h1 {
     color: rgb(57, 113, 209);
 }
@@ -27,12 +31,6 @@ footer {
     position: absolute;
     top: 90vh;
     width: 100%;
-}
-
-@media screen and (max-height: 410px) {
-  footer {
-    display: none;
-  }
 }
 
 .loader {
