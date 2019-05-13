@@ -52,7 +52,7 @@ class UI {
     }
 
     clearProfile() {
-        document.querySelector('footer').style.position = 'absolute';
+        document.querySelector('footer').style.position = 'fixed';
         document.querySelector('footer').style.top = '90vh';
         this.profile.innerHTML = '';
     }
