@@ -29,6 +29,12 @@ footer {
     width: 100%;
 }
 
+@media screen and (max-height: 410px) {
+  footer {
+    display: none;
+  }
+}
+
 .loader {
     display: none;
     position: absolute;
