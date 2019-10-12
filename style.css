@@ -1,67 +1,75 @@
 h1 {
-    color: rgb(57, 113, 209);
+  color: rgb(57, 113, 209);
 }
 
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size: 2.6rem;
-    }
+  h1 {
+    font-size: 2.6rem;
+  }
 }
 
 @media screen and (max-width: 470px) {
-    h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 
 .name {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 img {
-    width: 243px;
+  width: 243px;
 }
 
 footer {
-    position: fixed;
-    top: 90vh;
-    width: 100%;
+  position: fixed;
+  top: 90vh;
+  width: 100%;
 }
 
 .loader {
-    display: none;
-    position: absolute;
-    background-color: rgba(255,255,255,1);
-    left: 45vw;
-    border: 8px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid rgb(57, 113, 209);
-    border-bottom: 16px solid rgb(57, 113, 209);
-    width: 100px;
-    height: 100px;
-    -webkit-animation: spin 1s linear infinite;
-    animation: spin 1s linear infinite;
-    z-index: 9999;
-  }
-
-  @media screen and (max-width: 492px) {
-    .loader {
-      border: 8px solid #f3f3f3;
-      border-top: 12px solid rgb(57, 113, 209);
-      border-bottom: 12px solid rgb(57, 113, 209);
-      width: 80px;
-      height: 80px;
-      left: 40vw;
-    }
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  left: 45vw;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid rgb(57, 113, 209);
+  border-bottom: 16px solid rgb(57, 113, 209);
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  z-index: 9999;
 }
 
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+@media screen and (max-width: 492px) {
+  .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 12px solid rgb(57, 113, 209);
+    border-bottom: 12px solid rgb(57, 113, 209);
+    width: 80px;
+    height: 80px;
+    left: 40vw;
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
   }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
