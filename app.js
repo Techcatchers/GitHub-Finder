@@ -5,9 +5,8 @@ let execute;
 const searchUser = document.querySelector("#search-user");
 
 searchUser.addEventListener("keydown", e => {
-    // Disable spaces in input field
-    if (e.which === 32)
-        e.preventDefault();
+  // Disable spaces in input field
+  if (e.which === 32) e.preventDefault();
 });
 
 searchUser.addEventListener("keyup", e => {
